@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+  <div class="home">
+    <div class="row">
+      <div class="col-sm-12 home__block1">
+        <div class="home--square">
+          <div class="home--content">
+            <div class="home--content-wrapper">
+              <div class="home--content-inner">
+                <img href='logo.png'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home__featured">
+      <h2 class="text-center">{% trans "Featured products" context "Homepage title" %}</h2>
+      <div class="row">
+        {% include "product/_items.html" %}
+      </div>
+    </div>
+    <script type="application/ld+json">{{ webpage_schema|safe }}</script>
+  </div>
+{% endblock %}
